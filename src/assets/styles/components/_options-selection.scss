@@ -1,0 +1,23 @@
+.options-bar {
+  display: flex;
+  background-color: $light-gray;
+  @include spacing(padding, $sm);
+
+  &-input {
+    display: flex;
+    flex-direction: column;
+    @include spacing-offset(padding, 0, $sm);
+
+    &-label {
+      font-weight: bold;
+      @include spacing-stack($xxs);
+    }
+
+    &-field {
+      border: none;
+      border-radius: 4px;
+      @include spacing(padding, $xs);
+      width: 40px;
+    }
+  }
+}

@@ -1,0 +1,26 @@
+$xxs: 3px;
+$xs: 7px;
+$sm: 11px;
+$m: 16px;
+$l: 24px;
+$xl: 36px;
+
+@mixin spacing($type, $value) {
+  #{$type}: $value;
+}
+
+@mixin spacing-stack($value) {
+  margin-bottom: $value;
+}
+
+@mixin spacing-inline($value) {
+  margin-right: $value;
+}
+
+@mixin spacing-offset($type, $top-bottom, $right-left) {
+  #{$type}: $top-bottom $right-left;
+}
+
+@mixin spacing-unique($type, $top, $right, $bottom, $left) {
+  #{$type}: $top $right $bottom $left;
+}
