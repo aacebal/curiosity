@@ -2,8 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { Rover, Camera } from '../models/rover';
-import { PhotoItem } from '../models/photo-item';
+import { Rover, Camera, PhotoItem } from '../models/rover';
 
 @Injectable({
   providedIn: 'root'
@@ -22,14 +21,14 @@ export class MarsRoverService {
     return this.http.get<{ photo_manifest: Rover }>(url).pipe(map(response => response.photo_manifest));
   }
 
-  getPhotosBySol(sol): Observable<PhotoItem[]> {
+  getPhotosBySol(sol): Observable<Rover[]> {
     const url = `${this.baseUrl}/photos?sol=${sol}&api_key=${this.demoKey}`
-    return this.http.get<{ photos: PhotoItem[] }>(url).pipe(map(response => response.photos));
+    return this.http.get<{ photos: Rover[] }>(url).pipe(map(response => response.photos));
   }
 
-  getPhotosBySolAndCamera(sol, camera): Observable<PhotoItem[]> {
+  getPhotosBySolAndCamera(sol, camera): Observable<Rover[]> {
     const url = `${this.baseUrl}/photos?sol=${sol}&camera=${camera}&api_key=${this.demoKey}`
-    return this.http.get<{ photos: PhotoItem[] }>(url).pipe(map(response => response.photos));
+    return this.http.get<{ photos: Rover[] }>(url).pipe(map(response => response.photos));
   }
 
   getCameras(): Observable<Camera[]> {

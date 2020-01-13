@@ -7,7 +7,8 @@ export class Rover {
     max_sol: number;
     max_date: string;
     total_photos: number
-    cameras: Camera[]
+    camera: Camera;
+    cameras: Camera[];
 }
 
 export class Camera {
@@ -15,4 +16,13 @@ export class Camera {
     name: string;
     full_name: string;
     checked: boolean;
+}
+
+export class PhotoItem {
+    id?: number;
+    sol?: number;
+    img_src?: string;
+    earth_date?: string;
+    camera: Camera;
+    data: Rover[];
 }

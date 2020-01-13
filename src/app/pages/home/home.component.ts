@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MarsRoverService } from 'src/app/services/mars-rover.service';
-import { Camera, Rover } from 'src/app/models/rover';
+import { Camera, Rover, PhotoItem } from 'src/app/models/rover';
 import { share, map } from 'rxjs/operators';
-import { Observable, of, Subscription } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
   landedValue: string = '2012-08-06'
   maxSol: number = 2540;
   cameraValues: Camera[];
-  photos: any[] = [];
+  photos: PhotoItem[] = [];
   photoSubscriptions: Subscription[] = [];
   loading = false;
 

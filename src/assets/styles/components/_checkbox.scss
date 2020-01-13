@@ -1,9 +1,13 @@
 .checkbox {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 
-    &-icon {
-        width: $m;
-        @include spacing-inline($xs);
-    }
+  &-icon {
+    width: $m;
+    @include spacing-inline($xs);
+  }
+
+  &-label {
+    cursor: pointer;
+  }
 }
