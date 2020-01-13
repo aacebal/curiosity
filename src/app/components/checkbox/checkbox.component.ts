@@ -1,13 +1,13 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { SelectItem } from 'src/app/models/select-item';
+import { Camera } from 'src/app/models/rover';
 
 @Component({
   selector: 'sol-checkbox',
   templateUrl: './checkbox.component.html'
 })
 export class CheckboxComponent implements OnInit {
-  @Input() item: SelectItem;
-  @Output() emitSelectedItem = new EventEmitter<SelectItem>();
+  @Input() item: Camera;
+  @Output() emitSelectedItem = new EventEmitter<Camera>();
 
   constructor() { }
 

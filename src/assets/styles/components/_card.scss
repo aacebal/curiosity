@@ -1,0 +1,22 @@
+.card-container {
+  width: 250px;
+  border-radius: 4px;
+  @include spacing(padding, $m);
+  @include spacing(margin, $sm);
+  background-color: white;
+
+  &-title {
+    font-weight: bold;
+    @include spacing-stack($sm);
+  }
+
+  &-text {
+    @include spacing-stack($sm);
+  }
+  &-section {
+    &-img {
+      max-width: 250px;
+      @include spacing-unique(margin, $sm, 0, 0, 0);
+    }
+  }
+}

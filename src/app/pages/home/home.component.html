@@ -1,2 +1,16 @@
-<sol-toolbar [launched]="launchedValue" [landed]="landedValue" [maxSol]="maxSol"></sol-toolbar>
-<sol-options-selection [cameraValues]="cameraValues"></sol-options-selection>
+<div class="home-page">
+    <sol-toolbar [launched]="launchedValue" [landed]="landedValue" [maxSol]="maxSol"></sol-toolbar>
+    <sol-options-selection [sol]="sol" [cameraValues]="cameraValues"
+        (emitCamerasSelected)="filterPhotosByCamera($event)" (emitAllCamerasSelected)="getAllPhotosForSol()"
+        (emitClearCameras)="clearAllCameras()" (solChange)="getPhotosBySol($event)">
+    </sol-options-selection>
+    <section class="home-page-container">
+        <section *ngIf="!photos.length" class="home-page-container-message">
+            <p class="home-page-container-message-text">
+                Please use the camera filters to get Curiosity Images for the specified Sol.
+            </p>
+        </section>
+        <sol-image-card *ngFor="let card of photos" [card]="card"></sol-image-card>
+    </section>
+    <sol-loading [loading]="loading"></sol-loading>
+</div>

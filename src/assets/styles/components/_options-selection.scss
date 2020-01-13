@@ -2,6 +2,7 @@
   display: flex;
   background-color: $light-gray;
   @include spacing(padding, $sm);
+  @include spacing-stack($sm);
 
   &-input {
     display: flex;
@@ -10,7 +11,7 @@
 
     &-label {
       font-weight: bold;
-      @include spacing-stack($xxs);
+      @include spacing-stack($xs);
     }
 
     &-field {

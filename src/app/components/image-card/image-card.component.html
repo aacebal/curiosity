@@ -1,0 +1,10 @@
+<div class="card-container">
+    <h2 class="card-container-title">{{card.camera.full_name}}</h2>
+    <p class="card-container-text">Photos: {{card.data.length}}</p>
+    <div *ngIf="card.data[0]" f class="card-container-section">
+        <label class="card-container-section-text">
+            Sample photo:
+        </label>
+        <img class="card-container-section-img" [src]="card.data[0].img_src" alt="Space picture">
+    </div>
+</div>

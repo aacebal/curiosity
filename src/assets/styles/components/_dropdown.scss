@@ -6,7 +6,7 @@
   &-label {
     cursor: pointer;
     font-weight: bold;
-    @include spacing-stack($xxs);
+    @include spacing-stack($xs);
   }
 
   &-btn {
@@ -21,7 +21,7 @@
     align-items: center;
 
     &-icon {
-      width: $sm;
+      width: $xs;
     }
   }
 
@@ -35,6 +35,18 @@
     &-item {
       cursor: pointer;
       padding: $xs;
+    }
+
+    &-section {
+      display: flex;
+      justify-content: space-between;
+      @include spacing-offset(padding, $xs, 0);
+
+      &-btn {
+        background: none;
+        border: none;
+        color: $light-green;
+      }
     }
   }
 }

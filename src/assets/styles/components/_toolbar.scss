@@ -1,9 +1,10 @@
 .toolbar {
+  background-color: white;
   font-family: $font-stack;
-  @include spacing-offset(margin, $l, 0);
+  @include spacing-offset(padding, $l, 0);
   &-title {
     font-weight: bold;
     @include spacing-offset(margin, $m, 0);
-    @include font-size($l);
+    font-size: $l;
   }
 }

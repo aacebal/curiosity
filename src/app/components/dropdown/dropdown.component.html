@@ -3,6 +3,7 @@
         {{label}}
     </label>
     <button class="dropdown-btn" type="button" (click)="openCloseDropdown()">
+        
         <span class="dropdown-btn-text">{{getValuesSelected()}} Selected</span>
         <span class="dropdown-btn-icon">
             <svg *ngIf="!open" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="fas"
@@ -18,8 +19,11 @@
             </svg>
         </span>
     </button>
-    <!-- (mouseleave)="closeDropdown()" -->
     <ul *ngIf="open" class="dropdown-selection">
+        <section class="dropdown-selection-section">
+            <button (click)="onSelectAllItems()" class="dropdown-selection-section-btn" type="menu">Select All</button>
+            <button (click)="clearAllItems()" class="dropdown-selection-section-btn" type="reset">Clear</button>
+        </section>
         <li *ngFor="let item of values" (click)="onSelectItem(item)" class="dropdown-selection-item">
             <sol-checkbox [item]="item"></sol-checkbox>
         </li>

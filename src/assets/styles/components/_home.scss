@@ -1,0 +1,20 @@
+.home-page {
+  background-color: $dark-blue;
+  min-height: calc(100vh);
+
+  &-container {
+    display: flex;
+    flex-wrap: wrap;
+
+    &-message {
+      max-width: 750px;
+      @include spacing-offset(margin, $l, auto);
+
+      &-text {
+        text-align: center;
+        font-weight: bold;
+        font-size: $l;
+      }
+    }
+  }
+}
